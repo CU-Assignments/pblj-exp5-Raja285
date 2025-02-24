@@ -1,0 +1,29 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class SumUsingAutoboxingUnboxing {
+
+    public static Integer parseStringToInteger(String str) {
+        return Integer.parseInt(str);
+    }
+
+    public static int calculateSum(List<Integer> numbers) {
+        int sum = 0;
+        for (Integer number : numbers) {
+            sum += number;
+        }
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        String[] numberStrings = {"15", "25", "35", "45", "55"};
+        List<Integer> numbers = new ArrayList<>();
+
+        for (String str : numberStrings) {
+            numbers.add(parseStringToInteger(str));
+        }
+
+        int sum = calculateSum(numbers);
+        System.out.println("The sum of the integers is: " + sum);
+    }
+}
